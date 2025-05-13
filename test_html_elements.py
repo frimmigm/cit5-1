@@ -27,8 +27,8 @@ class TestContacts(unittest.TestCase):
         driver = self.driver
         driver.get("http://10.48.10.134")  # Replace with your target website
         
-        # Locate the <h5> tag and get its text
-        h5_text = driver.find_element(By.TAG_NAME, "h5").text
+        # Locate the <h2> tag and get its text
+        h5_text = driver.find_element(By.TAG_NAME, "h2").text
         
         # Assert that the text of the <h2> tag is "Add Contacts"
         self.assertEqual("Add Contacts", h2_text, "The <h2> tag does not contain the text 'Add Contacts'")
