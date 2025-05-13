@@ -23,6 +23,16 @@ class TestContacts(unittest.TestCase):
             assert test_name in driver.page_source, f"Test contact {test_name} not found in page source"
         print("Test completed successfully. All 10 test contacts were verified.")
 
+    def test_h5_tag_content(self):
+        driver = self.driver
+        driver.get("http://10.48.10.134")  # Replace with your target website
+        
+        # Locate the <h5> tag and get its text
+        h5_text = driver.find_element(By.TAG_NAME, "h5").text
+        
+        # Assert that the text of the <h2> tag is "Add Contacts"
+        self.assertEqual("Add Contacts", h2_text, "The <h2> tag does not contain the text 'Add Contacts'")
+
     def tearDown(self):
         self.driver.quit()
 
